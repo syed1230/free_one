@@ -605,3 +605,166 @@ margin-right: 8px;
 
 
 }
+<!--code for 2nd movie withh css inside it -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spider-Man: Far From Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background:linear-gradient(to bottom,rgb(128, 1, 1),rgb(2, 2, 129));
+            margin: 0;
+            padding: 0;
+            color: #333;
+            transition: background-color 0.5s;
+        }
+
+        header {
+            background:linear-gradient(to right,rgb(112, 1, 1),rgb(1, 1, 94));
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+
+        header h1 {
+            margin: 0;
+            transition: color 0.5s;
+        }
+
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            transition: background-color 0.5s;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #575757;
+            color: #ffa500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background:linear-gradient(to bottom ,rgb(169, 68, 68),rgb(49, 49, 110));
+            box-shadow: 0 0 10px rgba(3, 3, 3, 0.956);
+            transition: background-color 0.5s, box-shadow 0.5s;
+        }
+
+        .movie-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .movie-info img {
+            max-width: 300px;
+            margin-right: 20px;
+            transition: transform 0.5s;
+        }
+
+        .movie-info img:hover {
+            transform: scale(1.1);
+        }
+
+        .movie-details {
+            max-width: 800px
+            
+        }
+
+        .movie-details h2 {
+            margin-top: 0;
+            transition: color 0.5s;
+        }
+
+        .trailer {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .trailer h2 {
+            transition: color 0.5s;
+        }
+
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .gallery img {
+            max-width: 30%;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.3s, border-radius 0.3s;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05);
+            border-radius: 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            transition: background-color 0.5s, color 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Spider-Man: No way home</h1>
+    </header>
+    <nav>
+        <a href="/web_site3/index.html">Index</a>
+        <a href="/web_site3/ep_1.html">home coming </a>
+        <a href="/web_site3/ep_3.html">Far from Home</a>
+        <a href="/web_site3/contact.html">contact</a>
+    </nav>
+    <div class="container">
+        <div class="movie-info" id="movie-description">
+            <img src="https://images-cdn.ubuy.co.in/63afe31d80ead205e76377b7-chenliqin555-no-way-home-poster-artwork.jpg" alt="Spider-Man: Far From Home Poster">
+            <div class="movie-details">
+                <h2>Spider man :No way Home</h2>
+                <p>Here’s a *Spider-Man: No Way Home* (2021) description with even more emojis! 🕷️💥
+                    *Spider-Man: No Way Home* is a **mind-blowing** adventure 🌌💫! After Peter Parker 🧑‍🦱 is outed as Spider-Man 🕸️ to the world, his life gets turned upside down 🌍. In an attempt to erase everyone’s memory 🧠, Peter asks Doctor Strange 🧙‍♂️ to cast a spell 🔮, but things go terribly wrong when the spell breaks the multiverse! 😱   
+                    Villains from other realities, like **Green Goblin** 🦹‍♂️, **Doc Ock** 🧑‍🔬, **Electro** ⚡, and more, start appearing in Peter’s world, causing chaos and destruction 💥🔥. Peter teams up with **Tobey Maguire’s** 🕷️ and **Andrew Garfield’s** 🕸️ versions of Spider-Man to stop them and try to fix the damage 🛠️.      
+                    The movie is packed with **action-packed battles** ⚔️, intense moments of heartbreak 💔, tough decisions 🤔, and tons of surprises 🎉! Peter learns the true cost of being a hero 🦸‍♂️, making sacrifices for the greater good 💪. Along the way, there are **emotional reunions** 😭, thrilling fights 💥, and some epic **cameos** 👀 that make you cheer out loud!     
+                    This film is a **game-changer** for the MCU 🌟, filled with nostalgia, jaw-dropping twists 🤯, and a powerful message about **responsibility** 🕷️💖. Get ready for an unforgettable ride that fans will be talking about for years to come! 🎬🕸️</p>
+            </div>
+        </div>
+        <div class="trailer" id="trailer">
+            <h2>Watch the Trailer</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Nt9L1jCKGnE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <h2>Gallery</h2>
+        <div class="gallery" id="gallery">
+            <img src="https://wallpapers.com/images/featured/spider-man-no-way-home-pictures-l3ztimmzaeeqfgir.jpg" alt="Spider-Man Scene 1">
+            <img src="https://i.pinimg.com/originals/3f/fd/15/3ffd15aec5cc5baf433b3b757208c7f1.jpg" alt="Spider-Man Scene 2">
+            <img src="https://i.insider.com/623a1c8ed2f08a0019660304?width=800&format=jpeg&auto=webp" alt="Spider-Man Scene 3">
+        </div>
+    </div>
+    <footer>
+        &copy; 2025 Spider-Man Fan Page
+    </footer>
+</body>
+</html>
