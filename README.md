@@ -76,3 +76,141 @@ This repositiry contains one wedsite and 2 wed pages
     </footer>
 </body>
 </html>
+<!--css for this file-->
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0; 
+     color: #333;
+/* background-image:url(https://wallpapersmug.com/download/3840x2160/0e57ac/spider-man-neon.jpg);
+background-repeat: no-repeat;
+background-size: cover; */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ff0000;
+    color: white;
+    padding: 15px 20px;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd700;
+}
+
+.hero {
+    background: url('https://w0.peakpx.com/wallpaper/661/923/HD-wallpaper-chibi-spidey-spiderman-superheroes-digital-art-artwork.jpg') no-repeat center center/cover;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 24px;
+}
+
+.featured-content {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: white;
+    text-align: center;
+}
+
+.featured-content .content {
+    width: 45%;
+}
+
+.featured-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.featured-content ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.featured-content ul li {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.featured-content .image-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: #b80909;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    color: #aaa;
+}
+.pic{
+    width: 100%;
+    height: 300px;
+    align-content:normal;
+    background-color: #b80909;
+}
+.about {
+    background-image: url('https://t4.ftcdn.net/jpg/06/20/96/05/360_F_620960531_UDsMM2MyGwxes4gEFc4Awsb1iYFQksVr.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background:linear-gradient(to right,rgb(124, 3, 3),#943b3b,#3f3d87,rgb(4, 4, 119) ); */
+    border: 1px solid #ede7e7;
+    border-radius: 50px;
+    margin: 15px auto;
+    padding: 40px;
+    width: 80%;
+    box-shadow: 0 0 10px rgb(255, 4, 4);
+    color: #f0f0f0;
+  }
+  .about h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    justify-content: center;
+    text-align: center;
+    
+  }
+
+footer {
+    background-color: #ff0000;
+    color: white;
+    text-align: center;
+    padding: 15px 20px;
+    bottom: 0;
+    width: 100%;
+}
