@@ -214,3 +214,53 @@ footer {
     bottom: 0;
     width: 100%;
 }
+<!--home coming code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" type="text/css" href="ep_1.css">
+<body>
+     <!---header design--->
+     <header>
+        <a href="#" class="logo">SPIDER<span>man</span></a>
+        <ul class="navbar">
+            <li><a href="/web_site3/index.html">Home</a></li>
+            <li><a href="/web_site3/ep_2.html">Far away home</a></li>
+            <li><a href="/web_site3/ep_3.html">no way home</a></li>
+            <li><a href="/web_site3/contact.html">Contact us</a></li>
+        </ul>
+        </header>
+        <section class="holiday">
+            <div class="holiday-img">
+                <img src="https://w0.peakpx.com/wallpaper/86/700/HD-wallpaper-spiderman-homecoming-2017-movie-poster-spider-man-thumbnail.jpg">
+            </div>
+            <div class="holiday-text"> 
+                <h5>Spider Man -HOME COMING </h5>
+                <h2> "Spider-Man: Homecoming – Web-Slinging, Teen Drama, and Superhero Adventures 🕷️💥🎒"</h2>
+                <p> Sure! Here's the *Spider-Man: Homecoming* description with even more emojis:
+                    *Spider-Man: Homecoming* 🕷️🕸️ (2017) is an epic Marvel adventure full of action ⚡, humor 😂, and heart 💖! Peter Parker 🧑‍🦱, a high school student 🎒, struggles to balance his life as a teenager 👦, with his duties as Spider-Man 🕷️. After helping Iron Man 🦾 in *Captain America: Civil War* ⚔️, Peter is eager to prove himself worthy of joining the Avengers 💪. 
+                    His chance to shine comes when he faces the villainous Vulture 🦅, who’s wreaking havoc on New York City 🏙️! Peter’s world is filled with action-packed battles 💥, high-tech gadgets ⚙️, and tense moments of danger 🏃‍♂️💨. On top of all that, Peter must deal with the usual teenage dilemmas—friendships 👯‍♂️, schoolwork 📚, and a crush on Liz 😍.               
+                    With Tony Stark's guidance 👨‍🔧 and some laughs 🤣 along the way, Peter learns what it truly means to be a hero 🦸‍♂️ and how to take responsibility 🧐. The movie is a mix of excitement 🎢, laughs 😂, and moments that pull at your heartstrings 💖.     A perfect blend of superhero action 🏆, teen drama 🎬, and Marvel magic ✨!</p>
+                <a href="#" class="btn">Read more.</a>
+            </div>
+        </section>
+        <br>
+        <br>
+        <br><BR><BR><BR><BR><br><br><br><br><br>
+            <marquee> 
+                <img src="https://m.media-amazon.com/images/I/61KqU3T0OcL._AC_UF1000,1000_QL80_.jpg"alt="image2"width="300/500">
+                <img src="https://i.redd.it/x9ws3f55079z.jpg"alt="image1" width="300/500">
+                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f21dfd99-c72f-4e7e-8da4-9cf69a1f2049/dfboi0m-74d6f26f-62d4-4a6a-b642-b2157e79a11e.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyMWRmZDk5LWM3MmYtNGU3ZS04ZGE0LTljZjY5YTFmMjA0OVwvZGZib2kwbS03NGQ2ZjI2Zi02MmQ0LTRhNmEtYjY0Mi1iMjE1N2U3OWExMWUuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.v6Y1s2enf1ej2iyU9UrBPeBJXofhWksB3ca-wvLxKjo"alt="image3"width="300/500">
+                <img src="https://m.media-amazon.com/images/I/919-Tyg91SL._AC_UF350,350_QL80_.jpg"alt="image4"width="300/500"> 
+            </marquee>
+        <footer>
+            <center>
+            ©All rights reserved by spider man  2025.
+            </center>
+           </footer>
+        </body>
+        </html>
