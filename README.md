@@ -236,3 +236,86 @@ q.enqueue(70)  # should print full message
 q.dequeue()
 q.dequeue()
 q.display()
+
+<!--enqueing-->
+class CircularQueue:
+    def __init__(self, size):
+        # Initialize the queue with a fixed size
+        self.size = size
+        # Create a list to store queue elements, initially all None
+        self.queue = [None] * size
+        # front points to the index of the first element
+        self.front = -1
+        # rear points to the index of the last element
+        self.rear = -1
+    def is_full(self):
+        # Queue is full if next position of rear is front
+        return (self.rear + 1) % self.size == self.front
+    def is_empty(self):
+        # Queue is empty if front is -1
+        return self.front == -1
+    def enqueue(self, data):
+        # Add an element to the rear of the queue
+        if self.is_full():
+            # If the queue is full, we cannot add new element
+            print("Queue is full! Cannot enqueue", data)
+            return
+               if self.is_empty():
+            # If queue is empty, reset front and rear to 0
+            self.front = 0
+            self.rear = 0
+            self.queue[self.rear] = data  # Insert data at rear
+        else:
+            # Move rear forward circularly
+            self.rear = (self.rear + 1) % self.size
+            self.queue[self.rear] = data  # Insert data at new rear
+                print(f"Enqueued: {data}")
+    def dequeue(self):
+        # Remove an element from the front of the queue
+        if self.is_empty():
+            # Cannot dequeue if queue is empty
+            print("Queue is empty! Cannot dequeue")
+            return None
+               data = self.queue[self.front]  # Get the front element to return
+                if self.front == self.rear:
+            # If only one element was present, queue becomes empty after removal
+            self.front = -1
+            self.rear = -1
+        else:
+            # Move front forward circularly
+            self.front = (self.front + 1) % self.size
+                print(f"Dequeued: {data}")
+        return data
+    def display(self):
+        # Display all elements in the queue from front to rear
+        if self.is_empty():
+            print("Queue is empty")
+            return
+                print("Queue elements:", end=" ")
+        i = self.front
+        while True:
+            print(self.queue[i], end=" ")
+            if i == self.rear:
+                # Stop once we have printed the rear element
+                break
+            i = (i + 1) % self.size  # Move circularly to next element
+        print()
+
+
+# Testing the circular queue
+cq = CircularQueue(5)  # Create a queue of size 5
+
+# Enqueue 10, 20, 30
+cq.enqueue(10)  # Inserts 10 at rear (index 0)
+cq.enqueue(20)  # Inserts 20 at rear (index 1)
+cq.enqueue(30)  # Inserts 30 at rear (index 2)
+cq.display()    # Prints: 10 20 30
+
+# Dequeue twice (should remove 10 and then 20)
+cq.dequeue()    # Removes 10 from front (index 0), front moves to index 1
+cq.dequeue()    # Removes 20 from front (index 1), front moves to index 2
+cq.display()    # Prints: 30
+
+# Enqueue 5 (goes to next rear position circularly)
+cq.enqueue(5)   # Inserts 5 at rear (index 3)
+cq.display()    # Prints: 30 5
