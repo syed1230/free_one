@@ -319,3 +319,84 @@ cq.display()    # Prints: 30
 # Enqueue 5 (goes to next rear position circularly)
 cq.enqueue(5)   # Inserts 5 at rear (index 3)
 cq.display()    # Prints: 30 5
+
+
+<!--50 _integrs manipulation-->
+import random
+import time
+
+# Insertion Sort implementation
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        # Move elements of arr[0..i-1], that are greater than key,
+        # to one position ahead of their current position
+        while j >= 0 and arr[j] > key:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+# Merge Sort implementation
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2  # Finding the mid of the array
+        left_half = arr[:mid]  # Dividing the array elements
+        right_half = arr[mid:]  # into two halves
+        merge_sort(left_half)  # Sorting the first half
+        merge_sort(right_half)  # Sorting the second half
+        i = j = k = 0
+        # Copy data to temp arrays left_half[] and right_half[]
+        while i < len(left_half) and j < len(right_half):
+            if left_half[i] < right_half[j]:
+                arr[k] = left_half[i]
+                i += 1
+            else:
+                arr[k] = right_half[j]
+                j += 1
+            k += 1
+        # Checking if any element was left
+        while i < len(left_half):
+            arr[k] = left_half[i]
+            i += 1
+           k += 1
+       while j < len(right_half):
+            arr[k] = right_half[j]
+            j += 1
+            k += 1
+
+# Generate a random list of 50 integers between 1 and 100
+random_list = [random.randint(1, 100) for _ in range(50)]
+print("Original list:")
+print(random_list)
+
+# Copy lists for sorting (to keep the original list unchanged)
+list_for_insertion = random_list.copy()
+list_for_merge = random_list.copy()
+
+# Time insertion sort
+start_time = time.time()
+insertion_sort(list_for_insertion)
+end_time = time.time()
+insertion_sort_time = end_time - start_time
+print("\nSorted list by Insertion Sort:")
+print(list_for_insertion)
+print(f"Insertion Sort took {insertion_sort_time:.6f} seconds")
+
+# Time merge sort
+start_time = time.time()
+merge_sort(list_for_merge)
+end_time = time.time()
+merge_sort_time = end_time - start_time
+print("\nSorted list by Merge Sort:")
+print(list_for_merge)
+print(f"Merge Sort took {merge_sort_time:.6f} seconds")
+
+# Compare performance
+print("\nPerformance Comparison:")
+if insertion_sort_time < merge_sort_time:
+    print("Insertion Sort is faster.")
+elif merge_sort_time < insertion_sort_time:
+    print("Merge Sort is faster.")
+else:
+    print("Both algorithms took the same time.")
