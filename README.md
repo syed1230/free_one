@@ -400,3 +400,76 @@ elif merge_sort_time < insertion_sort_time:
     print("Merge Sort is faster.")
 else:
     print("Both algorithms took the same time.")
+    <!--circular_queue_inserion and deletion-->
+    class CircularQueue:
+    def __init__(self, size):
+        self.size = size                # Maximum size of the queue
+        self.queue = [None] * size      # Initialize the queue with None
+        self.front = -1                 # Front pointer
+        self.rear = -1                  # Rear pointer
+    def is_full(self):
+        # Queue is full if next position of rear is front
+        return (self.rear + 1) % self.size == self.front
+   def is_empty(self):
+        # Queue is empty if front is -1
+        return self.front == -1
+    def enqueue(self, data):
+        if self.is_full():
+            print("Queue is full! Cannot insert", data)
+            return
+        if self.is_empty():
+            # If queue is empty, initialize front and rear to 0
+            self.front = 0
+            self.rear = 0
+        else:
+            # Move rear forward circularly
+            self.rear = (self.rear + 1) % self.size    
+        self.queue[self.rear] = data
+        print(f"Inserted {data} into queue.")
+    def dequeue(self):
+        if self.is_empty():
+            print("Queue is empty! Cannot delete element.")
+            return None
+               data = self.queue[self.front]
+        if self.front == self.rear:
+            # Queue has only one element, reset queue after deletion
+            self.front = -1
+            self.rear = -1
+        else:
+            # Move front forward circularly
+            self.front = (self.front + 1) % self.size
+                print(f"Deleted {data} from queue.")
+        return data
+    def display(self):
+        if self.is_empty():
+            print("Queue is empty.")
+            return
+        print("Queue elements:", end=" ")
+        i = self.front
+        while True:
+            print(self.queue[i], end=" ")
+            if i == self.rear:
+                break
+            i = (i + 1) % self.size
+        print()
+
+
+# Example usage
+cq = CircularQueue(5)  # Queue of size 5
+
+cq.enqueue(10)
+cq.enqueue(20)
+cq.enqueue(30)
+cq.display()
+
+cq.dequeue()
+cq.dequeue()
+cq.display()
+
+cq.enqueue(40)
+cq.enqueue(50)
+cq.enqueue(60)
+cq.display()
+
+cq.enqueue(70)  # Should show queue is full
+
