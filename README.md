@@ -175,3 +175,64 @@ print(stack.pop())
 print('\nStack after elements are popped:')
 print(stack)
 
+<!--enques_and _dequesua-->
+class ArrayQueue:
+    def __init__(self, capacity):
+        self.queue = [None] * capacity  # fixed size array
+        self.front = 0
+        self.rear = -1
+        self.size = 0
+        self.capacity = capacity
+    def is_empty(self):
+        return self.size == 0
+    def is_full(self):
+        return self.size == self.capacity
+    def enqueue(self, item):
+        if self.is_full():
+            print("Queue is full! Cannot enqueue", item)
+            return
+        self.rear = (self.rear + 1) % self.capacity
+        self.queue[self.rear] = item
+        self.size += 1
+        print(f"Enqueued: {item}")
+    def dequeue(self):
+        if self.is_empty():
+            print("Queue is empty! Cannot dequeue")
+            return None
+        item = self.queue[self.front]
+        self.queue[self.front] = None  # Optional: clear the slot
+        self.front = (self.front + 1) % self.capacity
+        self.size -= 1
+        print(f"Dequeued: {item}")
+        return item
+    def display(self):
+        if self.is_empty():
+            print("Queue is empty")
+            return
+        print("Queue elements:", end=" ")
+        for i in range(self.size):
+            print(self.queue[(self.front + i) % self.capacity], end=" ")
+        print()
+
+
+# Example usage:
+q = ArrayQueue(5)
+
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+q.display()
+
+q.dequeue()
+q.display()
+
+q.enqueue(40)
+q.enqueue(50)
+q.enqueue(60)  # should be full now
+q.display()
+
+q.enqueue(70)  # should print full message
+
+q.dequeue()
+q.dequeue()
+q.display()
