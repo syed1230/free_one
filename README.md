@@ -473,3 +473,121 @@ cq.display()
 
 cq.enqueue(70)  # Should show queue is full
 
+<!--binary tree in array and the linked list-->
+class ArrayBinaryTree:
+    def __init__(self, capacity):
+        # Initialize the tree with a fixed capacity and fill it with None
+        self.tree = [None] * capacity
+        self.capacity = capacity
+    def set_root(self, data):
+        # Set the root node at index 0 if it's currently empty
+        if self.tree[0] is None:
+            self.tree[0] = data
+        else:
+            print("Root already exists.")
+    def set_left_child(self, parent_index, data):
+        # Calculate the left child index based on the parent index
+        left_child_index = 2 * parent_index + 1
+        # Check if the parent exists and is within bounds
+        if 0 <= parent_index < self.capacity and self.tree[parent_index] is not None:
+            # Ensure the left child index is within the array bounds
+            if 0 <= left_child_index < self.capacity:
+                self.tree[left_child_index] = data
+            else:
+                print("Left child index out of bounds.")
+        else:
+           print(f"Parent at index {parent_index} does not exist or is out of bounds.")
+    def set_right_child(self, parent_index, data):
+        # Calculate the right child index based on the parent index
+        right_child_index = 2 * parent_index + 2
+        # Check if the parent exists and is within bounds
+        if 0 <= parent_index < self.capacity and self.tree[parent_index] is not None:
+            # Ensure the right child index is within the array bounds
+            if 0 <= right_child_index < self.capacity:
+                self.tree[right_child_index] = data
+            else:
+                print("Right child index out of bounds.")
+        else:
+            print(f"Parent at index {parent_index} does not exist or is out of bounds.")
+    def get_node(self, index):
+        # Return the value at the given index if it's within bounds
+        if 0 <= index < self.capacity:
+            return self.tree[index]
+        return None  # Return None if index is invalid
+    def print_tree(self):
+        # Print the tree with index and value in a user-friendly format
+        print("Array Representation:")
+        for i, node in enumerate(self.tree):
+            if node is not None:
+                print(f"Index {i}: {node}", end=" | ")
+            else:
+                print(f"Index {i}: None", end=" | ")
+        print("\n")
+
+    <!--******* linked list implementation-->
+    # Node class represents each individual element (node) of the binary tree
+class Node:
+    def __init__(self, data):
+        self.data = data      # The value/data stored in the node
+        self.left = None      # Pointer to the left child
+        self.right = None     # Pointer to the right child
+
+# Binary tree implementation using linked list (nodes and pointers)
+class LinkedListBinaryTree:
+    def __init__(self):
+        self.root = None  # Initially, the tree is empty (no root)
+    def insert(self, data):
+        # Insert a new node into the tree
+        if self.root is None:
+            # If the tree is empty, set the new node as root
+            self.root = Node(data)
+        else:
+            # Otherwise, use level-order (BFS) insertion
+            self._insert_recursive(self.root, data)
+    def _insert_recursive(self, current_node, data):
+        # This function performs level-order insertion (breadth-first)
+        # It ensures that nodes are filled from top to bottom, left to right
+        from collections import deque  # Import deque for queue functionality
+        queue = deque([current_node])  # Initialize queue with the root node
+        while queue:
+            node = queue.popleft()  # Get the front node from the queue
+            # Check if the left child is empty
+            if node.left is None:
+                node.left = Node(data)  # Insert as left child
+                return
+            else:
+                queue.append(node.left)  # If not, add to queue to check its children
+            # Check if the right child is empty
+            if node.right is None:
+                node.right = Node(data)  # Insert as right child
+                return
+            else:
+                queue.append(node.right)  # If not, add to queue to check its children
+    def inorder_traversal(self, node):
+        # Inorder traversal: left subtree → root → right subtree
+        if node:
+            self.inorder_traversal(node.left)
+            print(node.data, end=" ")  # Print node data
+            self.inorder_traversal(node.right)
+    def print_tree(self):
+        # Helper function to print the tree using inorder traversal
+        print("Linked List Representation (Inorder Traversal):")
+        self.inorder_traversal(self.root)
+        print("\n")  # Newline after traversal output
+# Array Implementation
+array_tree = ArrayBinaryTree(10)
+array_tree.set_root('A')
+array_tree.set_left_child(0, 'B')
+array_tree.set_right_child(0, 'C')
+array_tree.set_left_child(1, 'D')
+array_tree.set_right_child(1, 'E')
+array_tree.print_tree()
+
+# Linked List Implementation
+linked_list_tree = LinkedListBinaryTree()
+linked_list_tree.insert('A')
+linked_list_tree.insert('B')
+linked_list_tree.insert('C')
+linked_list_tree.insert('D')
+linked_list_tree.insert('E')
+linked_list_tree.print_tree()
