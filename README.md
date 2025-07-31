@@ -1,4 +1,4 @@
-DSA code reporisitary 
+  DSA code reporisitary 
 <!--Queues_linkedlist-->
 class Node:
     def __init__(self, data):
